@@ -1,0 +1,48 @@
+@import '../../styles/tokens.scss';
+
+button {
+  font-weight: bold;
+  height: 34px;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+    border: none;
+    &:hover {
+      background-color: $dark-primary;
+    }
+  }
+  &.secondary {
+    background-color: $white;
+    color: $medium-blue;
+    border: 1px solid $primary;
+    &:hover {
+      background-color: $blue-40;
+      border: 1px solid black;
+    }
+    &:focus {
+      background-color: $white;
+      border: 1px solid $warning-blue;
+    }
+  }
+  &.terciary {
+    background-color: $white;
+    color: $medium-blue;
+    border: none;
+    &:hover {
+      background-color: $blue-20;
+    }
+  }
+}
+
+.small {
+  padding: 0 16px;
+  height: 32px;
+}
+.medium {
+  padding: 0 24px;
+  height: 48px;
+}

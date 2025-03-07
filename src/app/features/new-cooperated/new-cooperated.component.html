@@ -1,0 +1,32 @@
+<!-- <div style="display: flex; column-gap: 16px;">
+  <app-button [size]="'small'" [variant]="'primary'">Label teste</app-button>
+  <app-button [size]="'small'" [variant]="'secondary'">Label teste</app-button>
+  <app-button [size]="'small'" [variant]="'terciary'">Label teste</app-button>
+  <app-button [size]="'medium'" [variant]="'primary'">Label teste</app-button>
+  <app-button [size]="'medium'" [variant]="'secondary'">Label teste</app-button>
+  <app-button [size]="'medium'" [variant]="'terciary'">Label teste</app-button>
+  <app-input-field
+    [label]="'Labelzinha teste'"
+    [placeholder]="'Test placeholder'"
+    [helperText]="'Test helper text'"
+  ></app-input-field>
+</div> -->
+
+<div style="padding: 16px">
+  <div style="height: 111px"></div>
+  <div>
+    <span class="title">Informe o CPF do futuro cooperado (a)</span>
+    <p class="subtitle mt-1" style="max-width: 700px; white-space: pre-line;">
+      Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro
+      futuramente. Digite apenas os números (sem pontos ou traços).
+    </p>
+  </div>
+  <div class="row grid-container align-center mt-3">
+    <div class="col-4">
+      <app-input-field [label]="'CPF'" [placeholder]="'000.000.000-00'"></app-input-field>
+    </div>
+    <div class="col-3 ml-3">
+      <app-button [size]="'small'" [variant]="'primary'">Consultar por CPF</app-button>
+    </div>
+  </div>
+</div>

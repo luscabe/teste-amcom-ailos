@@ -1,0 +1,13 @@
+<div style="display: flex; align-items: center;">
+  <button
+    [ngClass]="{
+    'small': size === 'small',
+    'medium': size === 'medium',
+    'primary': variant === 'primary',	
+    'secondary': variant === 'secondary',	
+    'terciary': variant === 'terciary',	
+  }"
+  >
+    <ng-content></ng-content>
+  </button>
+</div>

@@ -1,0 +1,16 @@
+@import './../../shared/styles/tokens.scss';
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: $grey-4;
+}
