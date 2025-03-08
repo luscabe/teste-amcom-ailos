@@ -6,14 +6,14 @@
     <ul>
       <li>
         <a routerLinkActive="active">
-          <img class="action-icon" [src]="'/assets/icons/hamburger.svg'"/>
+          <img class="action-icon" [src]="'/assets/icons/hamburger.svg'" />
         </a>
       </li>
       <ng-container *ngFor="let item of sidebarOptions">
         <li>
           <a [href]="item.route" routerLinkActive="active">
-            <span *ngIf="false">{{ item.title }}</span> 
-            <img class="action-icon" [src]="'/assets/icons/'+item.icon+'.svg'"/>
+            <span *ngIf="false">{{ item.title }}</span>
+            <img class="action-icon" [src]="'/assets/icons/'+item.icon+'.svg'" />
           </a>
         </li>
       </ng-container>

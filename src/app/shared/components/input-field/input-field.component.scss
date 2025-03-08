@@ -28,3 +28,11 @@
   font-size: 12px;
   color: #6c757d;
 }
+
+.input-container.invalid .input-field {
+  border-color: red;
+}
+
+.input-container.invalid .helper-text {
+  color: red;
+}

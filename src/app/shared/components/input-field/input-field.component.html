@@ -1,5 +1,17 @@
-<div class="input-container">
+<div
+  class="input-container"
+  [ngClass]="{ 'invalid': control.invalid && (control.dirty || control.touched) }"
+>
   <label class="input-label">{{ label }}</label>
-  <input [type]="type" [placeholder]="placeholder" class="input-field" />
+  <input
+    class="input-field"
+    [type]="type"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    (input)="onChange(value)"
+    (blur)="onTouched()"
+    [disabled]="disabled"
+    [appMask]="mask"
+  />
   <span class="helper-text">{{ helperText }}</span>
 </div>

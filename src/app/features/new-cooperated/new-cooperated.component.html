@@ -13,7 +13,9 @@
 </div> -->
 
 <div style="padding: 16px">
-  <div style="height: 111px"></div>
+  <div class="timeline-wrapper">
+    <app-timeline></app-timeline>
+  </div>
   <div>
     <span class="title">Informe o CPF do futuro cooperado (a)</span>
     <p class="subtitle mt-1" style="max-width: 700px; white-space: pre-line;">
@@ -23,10 +25,21 @@
   </div>
   <div class="row grid-container align-center mt-3">
     <div class="col-4">
-      <app-input-field [label]="'CPF'" [placeholder]="'000.000.000-00'"></app-input-field>
+      <form [formGroup]="form">
+        <app-input-field
+          [label]="'CPF'"
+          [placeholder]="'000.000.000-00'"
+          [formControl]="form.controls['cpf'] | formControl"
+          [control]="form.controls['cpf'] | formControl"
+          [mask]="'000.000.000-00'"
+        >
+        </app-input-field>
+      </form>
     </div>
     <div class="col-3 ml-3">
-      <app-button (click)="notify()" [size]="'small'" [variant]="'primary'">Consultar por CPF</app-button>
+      <app-button (click)="notify()" [size]="'small'" [variant]="'primary'" [loading]="loading"
+        >Consultar por CPF</app-button
+      >
     </div>
   </div>
 </div>

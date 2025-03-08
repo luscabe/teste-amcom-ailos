@@ -2,7 +2,6 @@
 
 button {
   font-weight: bold;
-  height: 34px;
   &:hover {
     cursor: pointer;
   }
@@ -36,13 +35,49 @@ button {
       background-color: $blue-20;
     }
   }
+  &.loading {
+    color: transparent;
+  }
 }
 
 .small {
   padding: 0 16px;
-  height: 32px;
+  height: 34px;
 }
 .medium {
   padding: 0 24px;
   height: 48px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 18px;
+  aspect-ratio: 1;
+  display: grid;
+  position: relative;
+  margin: 0 auto;
+  top: -8px;
+  -webkit-mask: conic-gradient(from 15deg, #0000, #000);
+  animation: l26 1s infinite steps(12);
+}
+.loader,
+.loader:before,
+.loader:after {
+  background: radial-gradient(closest-side at 50% 12.5%, white 96%, #0000) 50% 0/20% 80% repeat-y,
+    radial-gradient(closest-side at 12.5% 50%, white 96%, #0000) 0 50%/80% 20% repeat-x;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  grid-area: 1/1;
+  transform: rotate(30deg);
+}
+.loader:after {
+  transform: rotate(60deg);
+}
+
+@keyframes l26 {
+  100% {
+    transform: rotate(1turn);
+  }
 }

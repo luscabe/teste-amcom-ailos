@@ -4,10 +4,14 @@
     'small': size === 'small',
     'medium': size === 'medium',
     'primary': variant === 'primary',	
-    'secondary': variant === 'secondary',	
-    'terciary': variant === 'terciary',	
+    'secondary': variant === 'secondary',	              
+    'terciary': variant === 'terciary',
+    'loading': loading
   }"
   >
-    <ng-content></ng-content>
+    <ng-container>
+      <ng-content></ng-content>
+      <div class="loader" *ngIf="loading"></div>
+    </ng-container>
   </button>
 </div>
