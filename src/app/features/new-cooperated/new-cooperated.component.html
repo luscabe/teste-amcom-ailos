@@ -26,7 +26,7 @@
       <app-input-field [label]="'CPF'" [placeholder]="'000.000.000-00'"></app-input-field>
     </div>
     <div class="col-3 ml-3">
-      <app-button [size]="'small'" [variant]="'primary'">Consultar por CPF</app-button>
+      <app-button (click)="notify()" [size]="'small'" [variant]="'primary'">Consultar por CPF</app-button>
     </div>
   </div>
 </div>
