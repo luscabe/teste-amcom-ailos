@@ -42,4 +42,9 @@
       >
     </div>
   </div>
+  <div class="row grid-container align-center mt-3" *ngIf="client">
+    <div class="col-4">
+      <app-registration-status-card [client]="client"></app-registration-status-card>
+    </div>
+  </div>
 </div>

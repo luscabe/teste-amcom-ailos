@@ -16,6 +16,8 @@ import {
 } from '@angular/forms';
 import {FormControlPipe} from '../../shared/pipe/formcontrol.pipe';
 import {cpfValidator} from '../../core/validators/cpf.validator';
+import {RegistrationStatusCardComponent} from './components/registration-status-card/registration-status-card/registration-status-card.component';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-new-cooperated',
@@ -23,12 +25,14 @@ import {cpfValidator} from '../../core/validators/cpf.validator';
   styleUrls: ['./new-cooperated.component.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     ButtonComponent,
     InputFieldComponent,
     TimelineComponent,
     FormControlPipe,
     FormsModule,
     ReactiveFormsModule,
+    RegistrationStatusCardComponent,
   ],
 })
 export class NewCooperatedComponent implements OnInit {
@@ -39,6 +43,7 @@ export class NewCooperatedComponent implements OnInit {
   ) {}
 
   form: FormGroup = new FormGroup({});
+  client: any;
   loading = false;
 
   ngOnInit() {
@@ -48,18 +53,24 @@ export class NewCooperatedComponent implements OnInit {
   notify() {
     this.verifyFormValidations(this.form);
     if (this.form.invalid) {
-      this.notificationService.show('CPF inválido, por favor verifique o documento inserido', 'error');
+      this.notificationService.show(
+        'CPF inválido, por favor verifique o documento inserido',
+        'error',
+      );
       return;
     }
     this.loading = true;
     const cpfControl = this.form.get('cpf');
     if (cpfControl && cpfControl.value !== '') {
-      this.cpfService.consultarCPF(cpfControl.value).subscribe((res: ICpf | null) => {
+      const cleanedCpf = this.removeSpecialCharacters(cpfControl.value);
+      this.cpfService.consultarCPF(cleanedCpf).subscribe((res: ICpf | null) => {
         if (res !== null) {
           this.notificationService.show(res?.status!, 'success');
+          this.client = res;
           this.loading = false;
         } else {
           this.notificationService.show('CPF não encontrado', 'error');
+          this.client = null;
           this.loading = false;
         }
       });
@@ -78,9 +89,13 @@ export class NewCooperatedComponent implements OnInit {
       control!.markAsDirty();
       control!.markAllAsTouched();
 
-        if (control instanceof FormGroup || control instanceof FormArray) {
-          this.verifyFormValidations(control);
-        }
+      if (control instanceof FormGroup || control instanceof FormArray) {
+        this.verifyFormValidations(control);
+      }
     });
+  }
+
+  removeSpecialCharacters(value: string): string {
+    return value.replace(/[^a-zA-Z0-9]/g, '');
   }
 }

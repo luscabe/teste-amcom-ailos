@@ -1,0 +1,50 @@
+<div class="registration-status-card">
+  <div class="registration-status-card__header">
+    <div class="registration-status-card__title">Situação cadastral do CPF</div>
+    <span class="registration-status-card__subtitle">Consulta na Receita Federal</span>
+  </div>
+  <div class="registration-status-card__infos mt-3">
+    <div class="registration-status-card__info">
+      <div class="registration-status-card__row">
+        <div style="width: 25%">
+          <img
+            class="registration-status-card__icon"
+            src="../../../../../../assets/icons/person.svg"
+          />
+        </div>
+        <div style="width: 75%">
+          <div class="registration-status-card__subtitle">Nome</div>
+          <span class="registration-status-card__info-value">{{ client.name }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="registration-status-card__info">
+      <div class="registration-status-card__row">
+        <div style="width: 25%">
+          <img
+            class="registration-status-card__icon"
+            src="../../../../../../assets/icons/document.svg"
+          />
+        </div>
+        <div style="width: 75%">
+          <div class="registration-status-card__subtitle">CPF</div>
+          <span class="registration-status-card__info-value">{{ client.document }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="registration-status-card__info">
+      <div class="registration-status-card__row">
+        <div style="width: 25%">
+          <img
+            class="registration-status-card__icon"
+            src="../../../../../../assets/icons/check-circle.svg"
+          />
+        </div>
+        <div style="width: 75%">
+          <div class="registration-status-card__subtitle">Situação do CPF</div>
+          <span span class="registration-status-card__info-value">{{ client.documentStatus }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
