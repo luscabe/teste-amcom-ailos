@@ -1,4 +1,4 @@
-<div style="display: flex; align-items: center;">
+<div style="display: flex; align-items: center;" [ngClass]="{'disabled': disabled}">
   <button
     [ngClass]="{
     'small': size === 'small',
@@ -6,8 +6,9 @@
     'primary': variant === 'primary',	
     'secondary': variant === 'secondary',	              
     'terciary': variant === 'terciary',
-    'loading': loading
-  }"
+    'loading': loading,
+    }"
+    [disabled]="disabled"
   >
     <ng-container>
       <ng-content></ng-content>

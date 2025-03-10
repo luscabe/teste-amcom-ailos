@@ -13,6 +13,10 @@ button {
     &:hover {
       background-color: $dark-primary;
     }
+    &:disabled {
+      opacity: .65;
+      pointer-events: none;
+    }
   }
   &.secondary {
     background-color: $white;
@@ -26,6 +30,10 @@ button {
       background-color: $white;
       border: 1px solid $warning-blue;
     }
+    &:disabled {
+      opacity: .65;
+      pointer-events: none;
+    }
   }
   &.terciary {
     background-color: $white;
@@ -34,12 +42,19 @@ button {
     &:hover {
       background-color: $blue-20;
     }
+    &:disabled {
+      opacity: .65;
+      pointer-events: none;
+    }
   }
   &.loading {
     color: transparent;
   }
 }
 
+.disabled {
+  pointer-events: none;
+}
 .small {
   padding: 0 16px;
   height: 34px;

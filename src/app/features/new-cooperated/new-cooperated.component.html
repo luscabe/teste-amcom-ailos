@@ -24,8 +24,8 @@
     </p>
   </div>
   <div class="row grid-container align-center mt-3">
-    <div class="col-4">
-      <form [formGroup]="form">
+    <form [formGroup]="form">
+      <div class="input-size">
         <app-input-field
           [label]="'CPF'"
           [placeholder]="'000.000.000-00'"
@@ -34,17 +34,24 @@
           [mask]="'000.000.000-00'"
         >
         </app-input-field>
-      </form>
-    </div>
-    <div class="col-3 ml-3">
-      <app-button (click)="notify()" [size]="'small'" [variant]="'primary'" [loading]="loading"
-        >Consultar por CPF</app-button
-      >
-    </div>
+      </div>
+    </form>
+    <app-button
+      [disabled]="client"
+      (click)="notify()"
+      [size]="'small'"
+      [variant]="'primary'"
+      [loading]="loading"
+      >Consultar por CPF</app-button
+    >
   </div>
-  <div class="row grid-container align-center mt-3" *ngIf="client">
-    <div class="col-4">
-      <app-registration-status-card [client]="client"></app-registration-status-card>
-    </div>
+  <div class="row grid-container align-center" *ngIf="client">
+    <app-registration-status-card [client]="client"></app-registration-status-card>
+    <ng-container *ngIf="client && client.accounts.length > 0">
+      @for (account of client.accounts; track account.accountNumber) {
+      <!-- {{account}} -->
+      <app-custom-account-card [account]="account"></app-custom-account-card>
+      }
+    </ng-container>
   </div>
 </div>

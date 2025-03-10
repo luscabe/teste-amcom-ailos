@@ -7,12 +7,31 @@ import {Component, Input, OnInit} from '@angular/core';
   standalone: true,
 })
 export class RegistrationStatusCardComponent implements OnInit {
-  @Input() client: {name: string; document: string; documentStatus: string} = {} as {
+  @Input() client: {
     name: string;
     document: string;
     documentStatus: string;
+    accounts: {cooperative: string; accountNumber: string; accountType: string}[];
+  } = {} as {
+    name: string;
+    document: string;
+    documentStatus: string;
+    accounts: {cooperative: string; accountNumber: string; accountType: string}[];
   };
   constructor() {}
 
   ngOnInit() {}
+
+  getIconSrc(type: string): string {
+    switch (type) {
+      case 'Reprovado':
+        return '/assets/icons/error.svg';
+      case 'Pendente':
+        return '/assets/icons/info.svg';
+      case 'Regular':
+        return '/assets/icons/check-circle.svg';
+      default:
+        return '/assets/icons/info.svg';
+    }
+  }
 }

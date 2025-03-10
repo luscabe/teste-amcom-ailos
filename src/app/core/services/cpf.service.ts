@@ -8,9 +8,41 @@ import {ICpf} from '../interfaces/cpf';
 })
 export class CpfService {
   private database = [
-    {document: '01234567890', name: 'Giovanni Mateus Rodrigues', documentStatus: 'Regular'},
-    {document: '55599876462', name: 'Murilo João Vitor Galvão', documentStatus: 'Pendente'},
-    {document: '11940283140', name: 'Edson Breno Otávio Aparício', documentStatus: 'Reprovado'},
+    {
+      document: '01234567890',
+      name: 'Giovanni Mateus Rodrigues',
+      documentStatus: 'Regular',
+      accounts: [
+        {
+          cooperative: 'Cooperativa Viacredi',
+          accountNumber: '557932-4',
+          accountType: 'Conta aplicação',
+        },
+        {
+          cooperative: 'Cooperativa Viacredi',
+          accountNumber: '778461-8',
+          accountType: 'Conta corrente',
+        },
+      ],
+    },
+    {
+      document: '55599876462',
+      name: 'Murilo João Vitor Galvão',
+      documentStatus: 'Pendente',
+      accounts: [
+        {
+          cooperative: 'Cooperativa Viacredi',
+          accountNumber: '557932-4',
+          accountType: 'Conta corrente',
+        },
+      ],
+    },
+    {
+      document: '11940283140',
+      name: 'Edson Breno Otávio Aparício',
+      documentStatus: 'Reprovado',
+      accounts: [],
+    },
   ];
 
   constructor() {}

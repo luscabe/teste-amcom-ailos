@@ -18,6 +18,7 @@ import {FormControlPipe} from '../../shared/pipe/formcontrol.pipe';
 import {cpfValidator} from '../../core/validators/cpf.validator';
 import {RegistrationStatusCardComponent} from './components/registration-status-card/registration-status-card/registration-status-card.component';
 import {CommonModule} from '@angular/common';
+import {CustomAccountCardComponent} from './components/custom-account-card/custom-account-card/custom-account-card.component';
 
 @Component({
   selector: 'app-new-cooperated',
@@ -33,6 +34,7 @@ import {CommonModule} from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     RegistrationStatusCardComponent,
+    CustomAccountCardComponent,
   ],
 })
 export class NewCooperatedComponent implements OnInit {
