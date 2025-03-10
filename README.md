@@ -6,22 +6,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Teste para vaga de frontend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Aqui está o código desenvolvido dentro dos 5 dias disponibilizados, data iniciada na quarta-feira 05/03/2025 e encerrado segunda-feira 10/03/2025.
 
-## Running end-to-end tests
+Aqui foi desenvolvido um pequeno protótipo, com a utilização de componentes locais (personalizados manualmente, sem utilização de frameworks).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Funcionalidades que não foram desenvolvidas, foram adicionadas uma tratativa para exibir um floater com a seguinte descrição 'Em breve'.
 
-## Further help
+Temos implementado nesse protótipo, campos com validadores e indicadores de erros, metodo de busca com uma 'base' mockada dentro do service, componentes customizados de acordo com o Figma disponibilizado. Temos a utilização de svgs estáticos localizados dentro da pasta de assets.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+CPFs diponíveis na base.
+`01234567890`
+`55599876462`
+`11940283140`
+Caso seja utilizado um cpf não disponível, retornará um toast informativo.

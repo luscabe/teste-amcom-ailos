@@ -1,46 +1,46 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
+import {NotificationService} from '../../core/services/notificationService.service';
 
 @Component({
   standalone: true,
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
-export class SidebarComponent implements OnInit {
-
+export class SidebarComponent {
   sidebarOptions = [
     {
       icon: 'search',
       title: 'Home',
-      route: '/home'
+      route: '/home',
     },
     {
       icon: 'star',
       title: 'Usuários',
-      route: '/users'
+      route: '/users',
     },
     {
       icon: 'chat',
       title: 'Configurações',
-      route: '/settings'
+      route: '/settings',
     },
     {
       icon: 'settings',
       title: 'Sair',
-      route: '/logout'
+      route: '/logout',
     },
     {
       icon: 'landmark',
       title: 'Sobre',
-      route: '/about'
-    }
-  ]
+      route: '/about',
+    },
+  ];
 
-  constructor() { }
+  constructor(private notificationService: NotificationService) {}
 
-  ngOnInit() {
+  comingSoon() {
+    this.notificationService.show('Em breve', 'info');
   }
-
 }

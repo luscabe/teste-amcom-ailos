@@ -1,13 +1,13 @@
-import { Injectable, signal } from '@angular/core';
+import {Injectable, signal} from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotificationService {
-  notifications = signal<{ message: string; type: 'success' | 'error' | 'warning' }[]>([]);
+  notifications = signal<{message: string; type: 'success' | 'error' | 'warning' | 'info'}[]>([]);
 
-  show(message: string, type: 'success' | 'error' | 'warning' = 'success') {
-    this.notifications.update((prev) => [...prev, { message, type }]);
+  show(message: string, type: 'success' | 'error' | 'warning' | 'info' = 'success') {
+    this.notifications.update((prev) => [...prev, {message, type}]);
     setTimeout(() => this.remove(message), 3000); // Auto-remove após 3s
   }
 

@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NotificationService} from '../../core/services/notificationService.service';
 
 @Component({
   standalone: true,
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  constructor(private notificationService: NotificationService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  comingSoon() {
+    this.notificationService.show('Em breve', 'info');
   }
-
 }

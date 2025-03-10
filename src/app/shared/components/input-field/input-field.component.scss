@@ -14,7 +14,7 @@
 .input-field {
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 14px;
 }
 
@@ -26,6 +26,8 @@
 .helper-text {
   font-size: 12px;
   color: #6c757d;
+  position: absolute;
+  bottom: -20px;
 }
 
 .input-container.invalid .input-field {

@@ -11,7 +11,7 @@
       </li>
       <ng-container *ngFor="let item of sidebarOptions">
         <li>
-          <a [href]="item.route" routerLinkActive="active">
+          <a class="option" (click)="comingSoon()" routerLinkActive="active">
             <span *ngIf="false">{{ item.title }}</span>
             <img class="action-icon" [src]="'/assets/icons/'+item.icon+'.svg'" />
           </a>

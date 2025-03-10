@@ -1,18 +1,4 @@
-<!-- <div style="display: flex; column-gap: 16px;">
-  <app-button [size]="'small'" [variant]="'primary'">Label teste</app-button>
-  <app-button [size]="'small'" [variant]="'secondary'">Label teste</app-button>
-  <app-button [size]="'small'" [variant]="'terciary'">Label teste</app-button>
-  <app-button [size]="'medium'" [variant]="'primary'">Label teste</app-button>
-  <app-button [size]="'medium'" [variant]="'secondary'">Label teste</app-button>
-  <app-button [size]="'medium'" [variant]="'terciary'">Label teste</app-button>
-  <app-input-field
-    [label]="'Labelzinha teste'"
-    [placeholder]="'Test placeholder'"
-    [helperText]="'Test helper text'"
-  ></app-input-field>
-</div> -->
-
-<div style="padding: 16px">
+<div class="new-cooperated">
   <div class="timeline-wrapper">
     <app-timeline></app-timeline>
   </div>
@@ -32,13 +18,15 @@
           [formControl]="form.controls['cpf'] | formControl"
           [control]="form.controls['cpf'] | formControl"
           [mask]="'000.000.000-00'"
+          [disabled]="client"
+          [helperText]="form.controls['cpf'].touched && form.controls['cpf'].invalid ? (form.controls['cpf'].hasError('cpfInvalid') ? 'CPF inválido' : 'Campo obrigatório'): ''"
         >
         </app-input-field>
       </div>
     </form>
     <app-button
       [disabled]="client"
-      (click)="notify()"
+      (buttonClick)="checkCPF()"
       [size]="'small'"
       [variant]="'primary'"
       [loading]="loading"
@@ -49,9 +37,21 @@
     <app-registration-status-card [client]="client"></app-registration-status-card>
     <ng-container *ngIf="client && client.accounts.length > 0">
       @for (account of client.accounts; track account.accountNumber) {
-      <!-- {{account}} -->
       <app-custom-account-card [account]="account"></app-custom-account-card>
       }
     </ng-container>
   </div>
 </div>
+<footer class="new-cooperated__footer">
+  <app-button
+    *ngIf="client"
+    class="ml-2"
+    (buttonClick)="comingSoon()"
+    [size]="'small'"
+    [variant]="'primary'"
+    >Iniciar nova admissão</app-button
+  >
+  <app-button class="ml-2" (buttonClick)="comingSoon()" [size]="'small'" [variant]="'secondary'">
+    Dicas para admissão
+  </app-button>
+</footer>

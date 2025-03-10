@@ -1,5 +1,20 @@
 @import './../../shared/styles/tokens.scss';
-
+.new-cooperated {
+  padding: 25px;
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background: $white;
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0;
+      color: #6c757d;
+    }
+  }
+}
 .title {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
@@ -23,4 +38,6 @@
 }
 .input-size {
   width: 270px;
+  position: relative;
+  top: -2px;
 }

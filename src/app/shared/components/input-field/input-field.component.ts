@@ -18,11 +18,11 @@ import {MaskDirective} from '../../../core/directives/mask.directive';
   ],
 })
 export class InputFieldComponent implements OnInit {
-  @Input() label: string = ''; // Texto do label
-  @Input() placeholder: string = ''; // Placeholder do input
-  @Input() helperText: string = ''; // Texto auxiliar abaixo do campo
-  @Input() type: string = 'text'; // Tipo do input (text, password, email, etc.)
-  @Input() mask: string = ''; // Tipo do input (text, password, email, etc.)
+  @Input() label: string = '';
+  @Input() placeholder: string = '';
+  @Input() helperText: string = '';
+  @Input() type: string = 'text';
+  @Input() mask: string = '';
   @Input() control!: FormControl;
   @Input() disabled: boolean = false;
   constructor() {}

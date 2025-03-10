@@ -52,7 +52,7 @@ export class NewCooperatedComponent implements OnInit {
     this.createForm();
   }
 
-  notify() {
+  checkCPF() {
     this.verifyFormValidations(this.form);
     if (this.form.invalid) {
       this.notificationService.show(
@@ -99,5 +99,9 @@ export class NewCooperatedComponent implements OnInit {
 
   removeSpecialCharacters(value: string): string {
     return value.replace(/[^a-zA-Z0-9]/g, '');
+  }
+
+  comingSoon() {
+    this.notificationService.show('Em breve', 'info');
   }
 }

@@ -1,5 +1,8 @@
 @import '../../styles/tokens.scss';
-
+.button-wrapper {
+  display: flex;
+  align-items: center;
+}
 button {
   font-weight: bold;
   &:hover {
@@ -14,10 +17,11 @@ button {
       background-color: $dark-primary;
     }
     &:disabled {
-      opacity: .65;
+      opacity: 0.65;
       pointer-events: none;
     }
   }
+
   &.secondary {
     background-color: $white;
     color: $medium-blue;
@@ -31,7 +35,7 @@ button {
       border: 1px solid $warning-blue;
     }
     &:disabled {
-      opacity: .65;
+      opacity: 0.65;
       pointer-events: none;
     }
   }
@@ -43,7 +47,7 @@ button {
       background-color: $blue-20;
     }
     &:disabled {
-      opacity: .65;
+      opacity: 0.65;
       pointer-events: none;
     }
   }

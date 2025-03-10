@@ -1,4 +1,4 @@
-<div style="display: flex; align-items: center;" [ngClass]="{'disabled': disabled}">
+<div class="button-wrapper" [ngClass]="{'disabled': disabled}">
   <button
     [ngClass]="{
     'small': size === 'small',
@@ -9,6 +9,7 @@
     'loading': loading,
     }"
     [disabled]="disabled"
+    (click)="handleClick($event)"
   >
     <ng-container>
       <ng-content></ng-content>

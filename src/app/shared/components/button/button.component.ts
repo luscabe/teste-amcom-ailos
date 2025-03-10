@@ -1,5 +1,5 @@
 import {CommonModule, NgClass} from '@angular/common';
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -8,12 +8,17 @@ import {Component, Input, OnInit} from '@angular/core';
   standalone: true,
   imports: [NgClass, CommonModule],
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   @Input({alias: 'size'}) size: string = 'small';
   @Input({alias: 'variant'}) variant: string = 'primary';
   @Input({alias: 'loading'}) loading: boolean = false;
   @Input({alias: 'disabled'}) disabled: boolean = false;
+  @Output() buttonClick = new EventEmitter<Event>();
   constructor() {}
 
-  ngOnInit() {}
+  handleClick(event: Event): void {
+    if (!this.disabled && !this.loading) {
+      this.buttonClick.emit(event);
+    }
+  }
 }

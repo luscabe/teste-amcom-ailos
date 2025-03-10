@@ -5,14 +5,16 @@
   </div>
 
   <div class="header-right">
-    <button class="notification">
+    <button class="notification" (click)="comingSoon()">
       <img class="icon" src="/assets/icons/bell.svg" />
       <span class="badge">1</span>
     </button>
-    <a class="profile">VIACREDI</a>
+    <a class="profile" (click)="comingSoon()">VIACREDI</a>
     <div class="profile-photo">
-      <img class="avatar" src="https://avatar.iran.liara.run/public" alt="Usuário" />
-      <img class="gear" src="/assets/icons/gear.svg" alt="Configurações" />
+      <img class="avatar" src="https://i.pravatar.cc/40" alt="Usuário" />
+      <a (click)="comingSoon()">
+        <img class="gear" src="/assets/icons/gear.svg" alt="Configurações" />
+      </a>
     </div>
   </div>
 </header>
