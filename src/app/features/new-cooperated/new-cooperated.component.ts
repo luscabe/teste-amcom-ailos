@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ButtonComponent} from '../../shared/components/button/button.component';
 import {InputFieldComponent} from '../../shared/components/input-field/input-field.component';
-import {NotificationService} from '../../core/services/notificationService.service';
+import {NotificationService} from '../../core/services/notification.service';
 import {CpfService} from '../../core/services/cpf.service';
 import {ICpf} from '../../core/interfaces/cpf';
 import {TimelineComponent} from '../../shared/components/timeline/timeline.component';
@@ -76,6 +76,11 @@ export class NewCooperatedComponent implements OnInit {
         }
       });
     }
+  }
+
+  resetForm() {
+    this.form.reset();
+    this.client = null;
   }
 
   createForm() {

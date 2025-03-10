@@ -32,6 +32,9 @@
       [loading]="loading"
       >Consultar por CPF</app-button
     >
+    <app-button *ngIf="client" (buttonClick)="resetForm()" [size]="'small'" [variant]="'secondary'"
+      >Limpar busca</app-button
+    >
   </div>
   <div class="row grid-container align-center" *ngIf="client">
     <app-registration-status-card [client]="client"></app-registration-status-card>

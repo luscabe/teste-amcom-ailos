@@ -2,8 +2,9 @@
   class="input-container"
   [ngClass]="{ 'invalid': control.invalid && (control.dirty || control.touched) }"
 >
-  <label class="input-label">{{ label }}</label>
+  <label class="input-label" for="input-field">{{ label }}</label>
   <input
+    id="input-field"
     class="input-field"
     [type]="type"
     [placeholder]="placeholder"
