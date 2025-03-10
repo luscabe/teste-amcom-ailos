@@ -67,7 +67,6 @@ export class NewCooperatedComponent implements OnInit {
       const cleanedCpf = this.removeSpecialCharacters(cpfControl.value);
       this.cpfService.consultarCPF(cleanedCpf).subscribe((res: ICpf | null) => {
         if (res !== null) {
-          this.notificationService.show(res?.status!, 'success');
           this.client = res;
           this.loading = false;
         } else {

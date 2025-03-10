@@ -24,7 +24,10 @@
         />
         <div style="width: 75%">
           <div class="registration-status-card__subtitle">CPF</div>
-          <span class="registration-status-card__info-value">{{ client.document }}</span>
+          <span
+            class="registration-status-card__info-value"
+            >{{ client.document | mask: '000.000.000-00'  }}</span
+          >
         </div>
       </div>
     </div>

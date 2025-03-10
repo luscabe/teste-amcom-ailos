@@ -1,9 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MaskPipe} from '../../../../../shared/pipe/mask-pipe.pipe';
 
 @Component({
   selector: 'app-registration-status-card',
   templateUrl: './registration-status-card.component.html',
   styleUrls: ['./registration-status-card.component.scss'],
+  imports: [MaskPipe],
   standalone: true,
 })
 export class RegistrationStatusCardComponent implements OnInit {
